@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f41c8376-a17f-4e26-afb6-d627820ed785" name="Changes" comment="Add in folder products page index &amp; products">
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+    <list default="true" id="f41c8376-a17f-4e26-afb6-d627820ed785" name="Changes" comment="Write views &amp; urls">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geekshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/geekshop/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634596576086</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Write views &amp; urls">
+      <created>1634597015232</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634597015232</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +99,7 @@
     <MESSAGE value="Delete .idea and db.sqlite3" />
     <MESSAGE value="Add app products, create templates &amp; products" />
     <MESSAGE value="Add in folder products page index &amp; products" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add in folder products page index &amp; products" />
+    <MESSAGE value="Write views &amp; urls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Write views &amp; urls" />
   </component>
 </project>
