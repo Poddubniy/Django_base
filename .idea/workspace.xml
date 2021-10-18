@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f41c8376-a17f-4e26-afb6-d627820ed785" name="Changes" comment="Write views &amp; urls">
+    <list default="true" id="f41c8376-a17f-4e26-afb6-d627820ed785" name="Changes" comment="Add static files">
+      <change afterPath="$PROJECT_DIR$/static/css/auth-admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/products.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/auth-admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/datatable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/fontawesome/fontawesome-icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/products/Adidas-hoodie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/products/Black-Dr-Martens-shoes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/products/Black-Nike-Heritage-backpack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/products/Blue-jacket-The-North-Face.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/products/Brown-sports-oversized-top-ASOS-DESIGN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/products/Dark-blue-wide-leg-ASOs-DESIGN-trousers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/slides/slide-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/slides/slide-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/slides/slide-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/users/default_avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/img/wallpaper.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.slim.min.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geekshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/geekshop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/products/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/products.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +79,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Django-projects\geekshop-server-new\geekshop\products\templates" />
       <recent name="E:\Django-projects\geekshop-server-new\geekshop\products\products" />
     </key>
   </component>
@@ -81,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634597015232</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change Settings, add installed app, add static">
+      <created>1634597513619</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1634597513619</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +153,8 @@
     <MESSAGE value="Add app products, create templates &amp; products" />
     <MESSAGE value="Add in folder products page index &amp; products" />
     <MESSAGE value="Write views &amp; urls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Write views &amp; urls" />
+    <MESSAGE value="Change Settings, add installed app, add static" />
+    <MESSAGE value="Add static files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add static files" />
   </component>
 </project>
