@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f41c8376-a17f-4e26-afb6-d627820ed785" name="Changes" comment="Add app products, create templates &amp; products">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f41c8376-a17f-4e26-afb6-d627820ed785" name="Changes" comment="Add in folder products page index &amp; products">
       <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +30,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Django-projects\geekshop-server-new\geekshop\products\products" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634596271909</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add in folder products page index &amp; products">
+      <created>1634596576086</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634596576086</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,6 +90,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Delete .idea and db.sqlite3" />
     <MESSAGE value="Add app products, create templates &amp; products" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add app products, create templates &amp; products" />
+    <MESSAGE value="Add in folder products page index &amp; products" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add in folder products page index &amp; products" />
   </component>
 </project>
