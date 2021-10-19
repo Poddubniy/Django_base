@@ -3,6 +3,7 @@ import json
 
 from django.shortcuts import render
 
+MODULE_DIR = os.path.dirname(__file__)
 # Create your views here.
 
 
