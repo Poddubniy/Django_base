@@ -20,4 +20,4 @@ class Product(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.PROTECT)
 
     def __str__(self):
-        return f'{self.name} | {self.category}'
+        return f'{self.name} | {self.category.name}'
