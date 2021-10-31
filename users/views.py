@@ -35,7 +35,7 @@ def logout(request):
 
 def registration(request):
     if request.method == 'POST':
-        form = UserRegistrationForm()
+        form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Вы успешно зарегестрировались!')
