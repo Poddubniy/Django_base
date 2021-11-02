@@ -35,7 +35,7 @@ def logout(request):
 
 def registration(request):
     if request.method == 'POST':
-        form = UserRegistrationForm()
+        form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Вы успешно зарегестрировались!')
@@ -55,7 +55,7 @@ def profile(request):
     user = request.user
     if request.method == 'POST':
         form = UserProfileForm(instance=user, files=request.FILES, data=request.POST)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('users:profiles'))
     else:
