@@ -1,25 +1,41 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import HttpResponseRedirect
 from django.contrib.auth.decorators import user_passes_test
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.utils.decorators import method_decorator
 
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 
 from users.models import User
 from admins.forms import UserAdminRegistrationForm, UserAdminProfileForm
 
 
-@user_passes_test(lambda u: u.is_staff)
-def index(request):
-    context = {
-        'title': 'Geekshop - Admin panel',
-    }
-    return render(request, 'admins/index.html', context)
+class IndexListView(ListView):
+    model = User
+    template_name = 'admins/index.html'
+
+    @method_decorator(user_passes_test(lambda u: u.is_staff))
+    def dispatch(self, request, *args, **kwargs):
+        return super(IndexListView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexListView, self).get_context_data(**kwargs)
+        context['title'] = 'Geekshop - Admin panel'
+        return context
 
 
 class UserListView(ListView):
     model = User
     template_name = 'admins/admin-users-read.html'
+
+    @method_decorator(user_passes_test(lambda u: u.is_staff))
+    def dispatch(self, request, *args, **kwargs):
+        return super(UserListView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(UserListView, self).get_context_data(**kwargs)
+        context['title'] = 'Geekshop - Users'
+        return context
 
 
 class UserCreateView(CreateView):
@@ -46,6 +62,15 @@ class UserDeleteView(DeleteView):
         success_url = self.get_success_url()
         self.object.save_delete()
         return HttpResponseRedirect(success_url)
+
+# @user_passes_test(lambda u: u.is_staff)
+# def index(request):
+#     context = {
+#         'title': 'Geekshop - Admin panel',
+#     }
+#     return render(request, 'admins/index.html', context)
+#
+#
 
 # # Create
 # @user_passes_test(lambda u: u.is_staff)
