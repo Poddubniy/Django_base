@@ -38,7 +38,7 @@
                                     <td><a href="{% url 'admins:admin_users_update' user.id %}" style="color: dodgerblue"> {{ user.username }}</a></td>
                                     <td>{{ user.first_name }}</td>
                                     <td>{{ user.last_name }}</td>
-                                    <td>{{ user.user_email }}</td>
+                                    <td>{{ user.email }}</td>
                                     <td class="text-center">
                                         {% if user.is_staff %}
                                             <i class="fas fa-check-circle"></i>
