@@ -7,6 +7,7 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
 
 from users.models import User
+from products.models import ProductCategory, Product
 from admins.forms import UserAdminRegistrationForm, UserAdminProfileForm
 
 
@@ -63,14 +64,64 @@ class UserDeleteView(DeleteView):
         self.object.save_delete()
         return HttpResponseRedirect(success_url)
 
+
+class CategoriesListView(ListView):
+    model = ProductCategory
+    template_name = 'admins/admin-categories-read.html'
+
+    @method_decorator(user_passes_test(lambda u: u.is_staff))
+    def dispatch(self, request, *args, **kwargs):
+        return super(CategoriesListView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoriesListView, self).get_context_data(**kwargs)
+        context['title'] = 'Geekshop - Categories'
+        return context
+
+
+class CategoriesCreateView(CreateView):
+    pass
+
+
+class CategoriesUpdateView(UpdateView):
+    pass
+
+
+class CategoriesDeleteView(DeleteView):
+    pass
+
+
+class ProductsListView(ListView):
+    model = Product
+    template_name = 'admins/admin-products-read.html'
+
+    @method_decorator(user_passes_test(lambda u: u.is_staff))
+    def dispatch(self, request, *args, **kwargs):
+        return super(ProductsListView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductsListView, self).get_context_data(**kwargs)
+        context['title'] = 'Geekshop - Products'
+        return context
+
+
+class ProductsCreateView(CreateView):
+    pass
+
+
+class ProductsUpdateView(UpdateView):
+    pass
+
+
+class ProductsDeleteView(DeleteView):
+    pass
+
 # @user_passes_test(lambda u: u.is_staff)
 # def index(request):
 #     context = {
 #         'title': 'Geekshop - Admin panel',
 #     }
 #     return render(request, 'admins/index.html', context)
-#
-#
 
 # # Create
 # @user_passes_test(lambda u: u.is_staff)
