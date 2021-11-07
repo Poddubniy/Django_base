@@ -1,0 +1,57 @@
+{% extends 'admins/base.html' %}
+
+{% block content %}
+       <main>
+            <div class="container-fluid">
+                <h1 class="mt-4">Товары</h1>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table mr-1"></i>
+                        Товары
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Изображение</th>
+                                    <th>Товары</th>
+                                    <th>Цена</th>
+                                    <th>Шт</th>
+                                    <th>Категория</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>Изображение</th>
+                                    <th>Товары</th>
+                                    <th>Цена</th>
+                                    <th>Шт</th>
+                                    <th>Категория</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                {% for product in object_list %}
+                                <tr>
+                                    <td>
+                                        <img width="50" height="50" src="{% if product.image %} /media/{{ product.image }} {% else %} {% endif %}" alt="{{ product.name }}">
+                                    </td>
+                                    <td><a href="{% url 'admins:admin_products_update' product.id %}" style="color: dodgerblue"> {{ product.name }}</a></td>
+                                    <td>{{ product.price }}</td>
+                                    <td>{{ product.quantity }}</td>
+                                    <td>{{ product.category }}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'admins:admin_categories_create' %}">
+                            <button class="btn btn-success">Создать категорию</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock %}
