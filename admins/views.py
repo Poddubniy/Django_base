@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.shortcuts import HttpResponseRedirect
 from django.contrib.auth.decorators import user_passes_test
 from django.views.generic.list import ListView
@@ -75,6 +76,7 @@ class CategoriesListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CategoriesListView, self).get_context_data(**kwargs)
+        context['all_products_in_categories'] = ProductCategory.objects.annotate(product_count=Count('product')).values('product_count')
         context['title'] = 'Geekshop - Categories'
         return context
 

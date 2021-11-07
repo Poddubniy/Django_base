@@ -14,27 +14,32 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
+                                    <th>Изображение</th>
                                     <th>Товары</th>
                                     <th>Цена</th>
-                                    <th>№</th>
+                                    <th>Шт</th>
                                     <th>Категория</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
+                                    <th>Изображение</th>
                                     <th>Товары</th>
                                     <th>Цена</th>
-                                    <th>№</th>
+                                    <th>Шт</th>
                                     <th>Категория</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
-                                {% for products in object_list %}
+                                {% for product in object_list %}
                                 <tr>
-                                    <td><a href="{% url 'admins:admin_products_update' products.id %}" style="color: dodgerblue"> {{ products.name }}</a></td>
-                                    <td>{{ products.price }}</td>
-                                    <td>{{ products.quantity }}</td>
-                                    <td>{{ products.category }}</td>
+                                    <td>
+                                        <img width="50" height="50" src="{% if product.image %} /media/{{ product.image }} {% else %} {% endif %}" alt="{{ product.name }}">
+                                    </td>
+                                    <td><a href="{% url 'admins:admin_products_update' product.id %}" style="color: dodgerblue"> {{ product.name }}</a></td>
+                                    <td>{{ product.price }}</td>
+                                    <td>{{ product.quantity }}</td>
+                                    <td>{{ product.category }}</td>
                                 </tr>
                                 {% endfor %}
                                 </tbody>
