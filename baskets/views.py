@@ -14,21 +14,21 @@ def basket_add(request, product_id):
 
     if not baskets.exists():
         Basket.objects.create(user=request.user, product=product, quantity=1)
-        return HttpResponseRedirect(request.META['HTTP_REFERER'])
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         basket = baskets.first()
         basket.quantity += 1
         basket.save()
-        return HttpResponseRedirect(request.META['HTTP_REFERER'])
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 @login_required
 def basket_remove(request, id):
-    basket = Basket.objects.get(id=id)
-    basket.delete()
-    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    Basket.objects.get(id=id).delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
+@login_required
 def basket_edit(request, id, quantity):
     if request.is_ajax():
         basket = Basket.objects.get(id=id)

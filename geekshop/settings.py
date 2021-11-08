@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'geekshop.context_processors.basket',
             ],
         },
     },
@@ -133,3 +134,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+
+# Sending mail
+DOMAIN_NAME = 'http://localhost:8000'
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_PORT = '2525'
+EMAIL_HOST_USER = '1f641fad136642'
+EMAIL_HOST_PASSWORD = '61dcc0f4ff240e'
+EMAIL_USE_SSL = False
