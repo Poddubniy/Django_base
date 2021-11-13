@@ -46,7 +46,13 @@ INSTALLED_APPS = [
     'users',
     'baskets',
     'admins',
+    'social_django',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.vk.VKOAuth2',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
