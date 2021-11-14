@@ -7,9 +7,10 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 
-from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
+from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm, UserProfileEditForm
 from baskets.models import Basket
 from users.models import User
+from django.db import transaction
 
 
 def login(request):
@@ -73,6 +74,30 @@ def profile(request):
         'form': form,
         'baskets': Basket.objects.filter(user=user),
     }
+    return render(request, 'users/profile.html', context)
+
+
+@transaction.atomic
+def edit(request):
+    if request.method == 'POST':
+        edit_form = UserProfileForm(request.POST, request.FILES, instance=request.user)
+        profile_form = UserProfileEditForm(request.POST, instance=request.user.userprofile)
+
+        if edit_form.is_valid() and profile_form.is_valid():
+            edit_form.save()
+            return HttpResponseRedirect(reverse('users:profile'))
+
+    else:
+        edit_form = UserProfileForm(instance=request.user)
+        profile_form = UserProfileEditForm(
+            instance=request.user.userprofile
+        )
+
+    context = {
+        'edit_form': edit_form,
+        'profile_form': profile_form
+    }
+
     return render(request, 'users/profile.html', context)
 
 
