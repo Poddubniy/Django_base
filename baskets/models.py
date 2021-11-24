@@ -12,7 +12,7 @@ class BasketQuerySet(models.QuerySet):
 
 
 class Basket(models.Model):
-    object = BasketQuerySet.as_manager()
+    objects = BasketQuerySet.as_manager()
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -26,22 +26,26 @@ class Basket(models.Model):
     def get_item(pk):
         return Basket.objects.filter(pk=pk).first()
 
-    def sum(self):
+    @property
+    def product_cost(self):
         return self.product.price * self.quantity
 
-    def total_sum(self):
-        baskets = Basket.objects.filter(user=self.user)
-        return sum(basket.sum() for basket in baskets)
-
+    @property
     def total_quantity(self):
-        baskets = Basket.objects.filter(user=self.user)
-        return sum(basket.quantity for basket in baskets)
+        _items = Basket.objects.filter(user=self.user)
+        _total_quantity = sum(list(map(lambda x: x.quantity, _items)))
+        return _total_quantity
+
+    @property
+    def total_cost(self):
+        _items = Basket.objects.filter(user=self.user)
+        _total_cost = sum(list(map(lambda x: x.product_cost, _items)))
+        return _total_cost
 
     def save(self, *args, **kwargs):
         if self.pk:
             self.product.quantity -= self.quantity - self.__class__.get_item(self.pk).quantity
         else:
             self.product.quantity -= self.quantity
-
         self.product.save()
-        super(Basket, self).save(*args, **kwargs)
+        super(self.__class__, self).save(*args, **kwargs)
