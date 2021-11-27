@@ -10,9 +10,12 @@
 
     <!-- Bootstrap core CSS -->
     <link href=" {% static 'vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
-
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
     <!-- Custom stile for this template -->
     {% block css %} {% endblock %}
+
+    <!-- Custom stile for this template -->
+    {% block js %} {% endblock %}
 </head>
 <body>
 
@@ -29,6 +32,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'products:product' %}">Каталог <i class="fas fa-shopping-bag"></i> </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ordersapp:order_list' %}">Заказы</a>
+                </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'users:logout' %}">Выйти <i class="fas fa-sign-out-alt"></i></a>
@@ -38,6 +44,7 @@
                         <i class="fas fa-user-circle"></i>
                     </a>
                 </li>
+
                 {% if user.is_stuff or user.is_superuser %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'admins:index' %}">
@@ -62,10 +69,11 @@
 {% endblock %}
 
 <!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 <!-- FontAwesome script -->
 <script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'js/basket.js' %}"></script>
 </body>
 </html>
