@@ -1,11 +1,10 @@
 import os
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product, ProductCategory
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 MODULE_DIR = os.path.dirname(__file__)
-# Create your views here.
 
 
 def index(request):
