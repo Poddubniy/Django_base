@@ -23,11 +23,16 @@ from products.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('', include('social_django.urls', namespace='social')),
     path('products/', include('products.urls', namespace='products')),
     path('users/', include('users.urls', namespace='users')),
     path('baskets/', include('baskets.urls', namespace='baskets')),
+    path('ordersapp/', include('ordersapp.urls', namespace='ordersapp')),
     path('admins/', include('admins.urls', namespace='admins')),
 ]
 
 if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
